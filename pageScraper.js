@@ -44,6 +44,7 @@ const scraperObject = {
                     response.buffer().then(file => {
 
                         // Naming logic
+                        const filePath = process.env.STORAGE_PATH;
                         const fileNameParts = url.split('/');
                         let fileName = fileNameParts.pop();
                         while (fileName.includes('.jpeg') != true) {
@@ -52,13 +53,12 @@ const scraperObject = {
                         fileName = fileName.split('?')[0]
 
                         // download if it doesnt already exist
-                        if (fs.existsSync(fileName)) {
+                        if (fs.existsSync(filePath+fileName)) {
                             console.log(fileName + ' already exists')
                         } else {
-                            const filePath = path.resolve(__dirname, fileName);
-                            const writeStream = fs.createWriteStream(filePath);
-                            writeStream.write(file);
                             console.log('writing file ' + fileName + ' to ' + filePath);
+                            const writeStream = fs.createWriteStream(filePath+fileName);
+                            writeStream.write(file);
                         }
 
                     });
