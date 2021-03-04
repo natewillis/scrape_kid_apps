@@ -1,0 +1,17 @@
+{
+  "name": "scrape_kid_apps",
+  "version": "1.0.0",
+  "description": "scrape hi mama",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "nate willis",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "puppeteer": "^8.0.0"
+  }
+}
