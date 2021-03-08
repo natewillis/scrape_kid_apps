@@ -66,7 +66,7 @@ const scraperObject = {
                         } else {
                             console.log('writing file ' + fileName + ' to ' + filePath);
                             const writeStream = fs.createWriteStream(absPath);
-                            writeStream.write(absPath);
+                            writeStream.write(file);
                         }
 
                     });
